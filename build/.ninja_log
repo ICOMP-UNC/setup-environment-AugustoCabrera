@@ -1,4 +1,0 @@
-# ninja log v5
-0	22	1710985081049132183	CMakeFiles/FirstProjectInCMake.dir/src/greetings.c.o	c1e132bec2f4a87d
-0	23	1710985081049132183	CMakeFiles/FirstProjectInCMake.dir/src/main.c.o	b4bcb5035dcd1caa
-23	47	1710985081073130598	FirstProjectInCMake	d0fd7e2f0d85ae86

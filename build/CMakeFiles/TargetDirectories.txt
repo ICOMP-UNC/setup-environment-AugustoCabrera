@@ -1,3 +1,0 @@
-/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/build/CMakeFiles/FirstProjectInCMake.dir
-/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/build/CMakeFiles/edit_cache.dir
-/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/build/CMakeFiles/rebuild_cache.dir

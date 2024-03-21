@@ -42,23 +42,19 @@ cmake_ninja_workdir = /home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-
 #############################################
 # Order-only phony target for FirstProjectInCMake
 
-build cmake_object_order_depends_target_FirstProjectInCMake: phony || .
+build cmake_object_order_depends_target_FirstProjectInCMake: phony || cmake_object_order_depends_target_DynamiCLib cmake_object_order_depends_target_StatiCLib
 
 build CMakeFiles/FirstProjectInCMake.dir/src/greetings.c.o: C_COMPILER__FirstProjectInCMake_unscanned_ /home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/src/greetings.c || cmake_object_order_depends_target_FirstProjectInCMake
   DEP_FILE = CMakeFiles/FirstProjectInCMake.dir/src/greetings.c.o.d
-  INCLUDES = -I/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/include
+  INCLUDES = -I/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/include -I/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/lib/libdyn/include -I/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/lib/libsta/include
   OBJECT_DIR = CMakeFiles/FirstProjectInCMake.dir
   OBJECT_FILE_DIR = CMakeFiles/FirstProjectInCMake.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/FirstProjectInCMake.dir/
-  TARGET_PDB = FirstProjectInCMake.pdb
 
 build CMakeFiles/FirstProjectInCMake.dir/src/main.c.o: C_COMPILER__FirstProjectInCMake_unscanned_ /home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/src/main.c || cmake_object_order_depends_target_FirstProjectInCMake
   DEP_FILE = CMakeFiles/FirstProjectInCMake.dir/src/main.c.o.d
-  INCLUDES = -I/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/include
+  INCLUDES = -I/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/include -I/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/lib/libdyn/include -I/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/lib/libsta/include
   OBJECT_DIR = CMakeFiles/FirstProjectInCMake.dir
   OBJECT_FILE_DIR = CMakeFiles/FirstProjectInCMake.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/FirstProjectInCMake.dir/
-  TARGET_PDB = FirstProjectInCMake.pdb
 
 
 # =============================================================================
@@ -68,13 +64,13 @@ build CMakeFiles/FirstProjectInCMake.dir/src/main.c.o: C_COMPILER__FirstProjectI
 #############################################
 # Link the executable FirstProjectInCMake
 
-build FirstProjectInCMake: C_EXECUTABLE_LINKER__FirstProjectInCMake_ CMakeFiles/FirstProjectInCMake.dir/src/greetings.c.o CMakeFiles/FirstProjectInCMake.dir/src/main.c.o
+build FirstProjectInCMake: C_EXECUTABLE_LINKER__FirstProjectInCMake_ CMakeFiles/FirstProjectInCMake.dir/src/greetings.c.o CMakeFiles/FirstProjectInCMake.dir/src/main.c.o | lib/libsta/libStatiCLib.a lib/libdyn/libDynamiCLib.so || lib/libdyn/libDynamiCLib.so lib/libsta/libStatiCLib.a
+  LINK_LIBRARIES = -Wl,-rpath,/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/lib/libdyn  lib/libsta/libStatiCLib.a  lib/libdyn/libDynamiCLib.so
   OBJECT_DIR = CMakeFiles/FirstProjectInCMake.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/FirstProjectInCMake.dir/
   TARGET_FILE = FirstProjectInCMake
-  TARGET_PDB = FirstProjectInCMake.pdb
+  TARGET_PDB = FirstProjectInCMake.dbg
 
 
 #############################################
@@ -101,7 +97,137 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target DynamiCLib
+
+
+#############################################
+# Order-only phony target for DynamiCLib
+
+build cmake_object_order_depends_target_DynamiCLib: phony || .
+
+build lib/libdyn/CMakeFiles/DynamiCLib.dir/src/shared.c.o: C_COMPILER__DynamiCLib_unscanned_ /home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/lib/libdyn/src/shared.c || cmake_object_order_depends_target_DynamiCLib
+  DEFINES = -DDynamiCLib_EXPORTS
+  DEP_FILE = lib/libdyn/CMakeFiles/DynamiCLib.dir/src/shared.c.o.d
+  FLAGS = -fPIC
+  INCLUDES = -I/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/include -I/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/lib/libdyn/include
+  OBJECT_DIR = lib/libdyn/CMakeFiles/DynamiCLib.dir
+  OBJECT_FILE_DIR = lib/libdyn/CMakeFiles/DynamiCLib.dir/src
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target DynamiCLib
+
+
+#############################################
+# Link the shared library lib/libdyn/libDynamiCLib.so
+
+build lib/libdyn/libDynamiCLib.so: C_SHARED_LIBRARY_LINKER__DynamiCLib_ lib/libdyn/CMakeFiles/DynamiCLib.dir/src/shared.c.o
+  OBJECT_DIR = lib/libdyn/CMakeFiles/DynamiCLib.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  SONAME = libDynamiCLib.so
+  SONAME_FLAG = -Wl,-soname,
+  TARGET_FILE = lib/libdyn/libDynamiCLib.so
+  TARGET_PDB = DynamiCLib.so.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build lib/libdyn/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/lib/libdyn && /usr/local/bin/ccmake -S/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera -B/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build lib/libdyn/edit_cache: phony lib/libdyn/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build lib/libdyn/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/lib/libdyn && /usr/local/bin/cmake --regenerate-during-build -S/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera -B/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build lib/libdyn/rebuild_cache: phony lib/libdyn/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target StatiCLib
+
+
+#############################################
+# Order-only phony target for StatiCLib
+
+build cmake_object_order_depends_target_StatiCLib: phony || .
+
+build lib/libsta/CMakeFiles/StatiCLib.dir/src/static.c.o: C_COMPILER__StatiCLib_unscanned_ /home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/lib/libsta/src/static.c || cmake_object_order_depends_target_StatiCLib
+  DEP_FILE = lib/libsta/CMakeFiles/StatiCLib.dir/src/static.c.o.d
+  INCLUDES = -I/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/include -I/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/lib/libsta/include
+  OBJECT_DIR = lib/libsta/CMakeFiles/StatiCLib.dir
+  OBJECT_FILE_DIR = lib/libsta/CMakeFiles/StatiCLib.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target StatiCLib
+
+
+#############################################
+# Link the static library lib/libsta/libStatiCLib.a
+
+build lib/libsta/libStatiCLib.a: C_STATIC_LIBRARY_LINKER__StatiCLib_ lib/libsta/CMakeFiles/StatiCLib.dir/src/static.c.o
+  OBJECT_DIR = lib/libsta/CMakeFiles/StatiCLib.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = lib/libsta/libStatiCLib.a
+  TARGET_PDB = StatiCLib.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build lib/libsta/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/lib/libsta && /usr/local/bin/ccmake -S/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera -B/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build lib/libsta/edit_cache: phony lib/libsta/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build lib/libsta/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/lib/libsta && /usr/local/bin/cmake --regenerate-during-build -S/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera -B/home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build lib/libsta/rebuild_cache: phony lib/libsta/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
+
+build DynamiCLib: phony lib/libdyn/libDynamiCLib.so
+
+build StatiCLib: phony lib/libsta/libStatiCLib.a
+
+build libDynamiCLib.so: phony lib/libdyn/libDynamiCLib.so
+
+build libStatiCLib.a: phony lib/libsta/libStatiCLib.a
 
 # =============================================================================
 # Folder targets.
@@ -111,7 +237,21 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera
 
-build all: phony FirstProjectInCMake
+build all: phony FirstProjectInCMake lib/libdyn/all lib/libsta/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/lib/libdyn
+
+build lib/libdyn/all: phony lib/libdyn/libDynamiCLib.so
+
+# =============================================================================
+
+#############################################
+# Folder: /home/augusto/Escritorio/Tp_SOII_AugustoCabrera/TP0/setup-environment-AugustoCabrera/lib/libsta
+
+build lib/libsta/all: phony lib/libsta/libStatiCLib.a
 
 # =============================================================================
 # Built-in targets
@@ -120,14 +260,14 @@ build all: phony FirstProjectInCMake
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /usr/local/share/cmake-3.29/Modules/CMakeCCompiler.cmake.in /usr/local/share/cmake-3.29/Modules/CMakeCCompilerABI.c /usr/local/share/cmake-3.29/Modules/CMakeCInformation.cmake /usr/local/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.29/Modules/CMakeCompilerIdDetection.cmake /usr/local/share/cmake-3.29/Modules/CMakeDetermineCCompiler.cmake /usr/local/share/cmake-3.29/Modules/CMakeDetermineCompileFeatures.cmake /usr/local/share/cmake-3.29/Modules/CMakeDetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake /usr/local/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake /usr/local/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake /usr/local/share/cmake-3.29/Modules/CMakeFindBinUtils.cmake /usr/local/share/cmake-3.29/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.29/Modules/CMakeNinjaFindMake.cmake /usr/local/share/cmake-3.29/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/local/share/cmake-3.29/Modules/CMakeParseImplicitLinkInfo.cmake /usr/local/share/cmake-3.29/Modules/CMakeParseLibraryArchitecture.cmake /usr/local/share/cmake-3.29/Modules/CMakeSystem.cmake.in /usr/local/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake /usr/local/share/cmake-3.29/Modules/CMakeTestCompilerCommon.cmake /usr/local/share/cmake-3.29/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/CrayClang-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/GNU-C.cmake /usr/local/share/cmake-3.29/Modules/Compiler/GNU-FindBinUtils.cmake /usr/local/share/cmake-3.29/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.29/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/local/share/cmake-3.29/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/LCC-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/OrangeC-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/TI-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/TIClang-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Tasking-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake /usr/local/share/cmake-3.29/Modules/Internal/FeatureTesting.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux-GNU-C.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux-Initialize.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.29/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.29.0-rc4/CMakeCCompiler.cmake CMakeFiles/3.29.0-rc4/CMakeSystem.cmake CMakeLists.txt
+build build.ninja: RERUN_CMAKE | /usr/local/share/cmake-3.29/Modules/CMakeCInformation.cmake /usr/local/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.29/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.29/Modules/Compiler/GNU-C.cmake /usr/local/share/cmake-3.29/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux-GNU-C.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux-Initialize.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.29/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.29.0-rc4/CMakeCCompiler.cmake CMakeFiles/3.29.0-rc4/CMakeSystem.cmake CMakeLists.txt lib/libdyn/CMakeLists.txt lib/libsta/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /usr/local/share/cmake-3.29/Modules/CMakeCCompiler.cmake.in /usr/local/share/cmake-3.29/Modules/CMakeCCompilerABI.c /usr/local/share/cmake-3.29/Modules/CMakeCInformation.cmake /usr/local/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.29/Modules/CMakeCompilerIdDetection.cmake /usr/local/share/cmake-3.29/Modules/CMakeDetermineCCompiler.cmake /usr/local/share/cmake-3.29/Modules/CMakeDetermineCompileFeatures.cmake /usr/local/share/cmake-3.29/Modules/CMakeDetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake /usr/local/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake /usr/local/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake /usr/local/share/cmake-3.29/Modules/CMakeFindBinUtils.cmake /usr/local/share/cmake-3.29/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.29/Modules/CMakeNinjaFindMake.cmake /usr/local/share/cmake-3.29/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/local/share/cmake-3.29/Modules/CMakeParseImplicitLinkInfo.cmake /usr/local/share/cmake-3.29/Modules/CMakeParseLibraryArchitecture.cmake /usr/local/share/cmake-3.29/Modules/CMakeSystem.cmake.in /usr/local/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake /usr/local/share/cmake-3.29/Modules/CMakeTestCompilerCommon.cmake /usr/local/share/cmake-3.29/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/CrayClang-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/GNU-C.cmake /usr/local/share/cmake-3.29/Modules/Compiler/GNU-FindBinUtils.cmake /usr/local/share/cmake-3.29/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.29/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/local/share/cmake-3.29/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/LCC-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/OrangeC-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/TI-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/TIClang-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Tasking-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/local/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake /usr/local/share/cmake-3.29/Modules/Internal/FeatureTesting.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux-GNU-C.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux-Initialize.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.29/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.29.0-rc4/CMakeCCompiler.cmake CMakeFiles/3.29.0-rc4/CMakeSystem.cmake CMakeLists.txt: phony
+build /usr/local/share/cmake-3.29/Modules/CMakeCInformation.cmake /usr/local/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.29/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.29/Modules/Compiler/GNU-C.cmake /usr/local/share/cmake-3.29/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux-GNU-C.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux-Initialize.cmake /usr/local/share/cmake-3.29/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.29/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.29.0-rc4/CMakeCCompiler.cmake CMakeFiles/3.29.0-rc4/CMakeSystem.cmake CMakeLists.txt lib/libdyn/CMakeLists.txt lib/libsta/CMakeLists.txt: phony
 
 
 #############################################

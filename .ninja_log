@@ -1,0 +1,8 @@
+# ninja log v5
+1	69	1711027748713542262	CMakeFiles/FirstProjectInCMake.dir/src/main.c.o	835ff4e20379fdb8
+0	69	1711027748713542262	CMakeFiles/FirstProjectInCMake.dir/src/greetings.c.o	c5d2a350e3b15804
+1	69	1711027748713542262	lib/libdyn/CMakeFiles/DynamiCLib.dir/src/shared.c.o	36f105bbbabcc38b
+1	70	1711027748713542262	lib/libsta/CMakeFiles/StatiCLib.dir/src/static.c.o	40aa64da30207720
+70	105	1711027748749541567	lib/libdyn/libDynamiCLib.so	640631cca2d7503d
+70	124	1711027748765541259	lib/libsta/libStatiCLib.a	2982c3937d4698e8
+124	145	1711027748789540796	FirstProjectInCMake	d92a70233f09c8ab
