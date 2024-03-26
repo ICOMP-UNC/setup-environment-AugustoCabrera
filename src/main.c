@@ -1,5 +1,7 @@
 #include <greetings.h>
 #include <stdio.h>
+#include "shared.h"
+#include "static.h"
 
 int main (int argc, char* argv[])
 {

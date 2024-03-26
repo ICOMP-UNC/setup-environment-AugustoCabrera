@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.25 FATAL_ERROR)
 
 project (
-"FirstProjectInCMake"
-VERSION 1.2.0
-DESCRIPTION "CMake C Project Template for Operating Systems II"
-LANGUAGES C
+    "FirstProjectInCMake"
+    VERSION 1.2.0
+    DESCRIPTION "CMake C Project Template for Operating Systems II"
+    LANGUAGES C
 )
 
 include(CTest) #para habilitar los test
@@ -53,6 +53,9 @@ target_include_directories(${PROJECT_NAME} PUBLIC lib/libsta/include)
 #EN CMake TODO es un target
 target_link_libraries(${PROJECT_NAME} StatiCLib DynamiCLib) 
 #RUN_TESTS  son variables a pasar cuando estemos haciendo los CMAKE
-if(RUN_TESTS EQUAL 1 OR RUN_COVERAGE EQUAL 1)
+
+
+if(RUN_TEST EQUAL 1 OR RUN_COVERAGE EQUAL 1)
     add_subdirectory(tests) #se añade este directorio en alguno de estas condiciones
 endif()
+
