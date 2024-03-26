@@ -11,13 +11,13 @@ set(CMAKE_C_STANDARD 17)
 
 include_directories(include)
 
-file(GLOB_RECURSE SOURCES "src/*.c")  #Donde busca el codigo fuente
+file(GLOB_RECURSE SOURCES "src/*.c")  #Where to look for the source code
 
 
-#Ahora creo el ejecutable:
-#${PROJECT_NAME} para que lea las variables de CMake de la misma forma que
-# lo hace en BASH por ende ${PROJECT_NAME} = GLOB_RECURSE SOURCE
-# y ${SOURCES} = "src/*.c"
+#Now I create the executable:
+#${PROJECT_NAME} to read CMake variables in the same way as
+# does it in BASH therefore ${PROJECT_NAME} = GLOB_RECURSE SOURCE
+# and ${SOURCES} = "src/*.c"
 
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
 

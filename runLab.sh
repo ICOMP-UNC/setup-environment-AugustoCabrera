@@ -1,20 +1,21 @@
 !/bin/bash -e
 
-echo ""
+echo "🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨🔨"
 
 if [ -d "./build" ]; then
-    echo "-> Removing old build directory..."
+    echo "-> 🚮 Removing old build directory..."
     rm -rf ./build/*
 else
-    echo "-> Creating build directory..."
+    echo "-> 👷 Creating build directory..."
     mkdir build
 fi
 
-echo ""
-echo "-> Compiling project and building..."
+echo "🔧🔧🔧🔧🔧🔧🔧🔧🔧🔧🔧🔧🔧🔧🔧🔧🔧🔧"
+echo "-> 💻 Compiling project and 📝 building..."
 cd build && cmake -GNinja .. && ninja
 
 echo ""
-echo "-> Running project..."
+echo "-> 🏃 Running project..."
 echo ""
 ./FirstProjectInCMake
+

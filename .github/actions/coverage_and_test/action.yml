@@ -1,6 +1,6 @@
 name: "Test and coverage check"
 description: "Test and coverage check with gcovr, pass if coverage is greater than 20%"
-#TODO son las documentaciones del codigo 
+#ALL is the code documentations
 runs:
   using: "composite"
   steps:
@@ -34,7 +34,7 @@ runs:
             exit 1
         fi
 
-    #hace el calculo para ver si pasa o no el 20%
+    #do the calculation to see if it passes 20% or not
 
     # Upload errors as an artifact, when failed
     - uses: actions/upload-artifact@v3

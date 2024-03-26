@@ -1,14 +1,14 @@
 name: QA Workflow
 
 on:
-  workflow_dispatch: #puedo ejecutar a voluntad
+  workflow_dispatch: #can execute at will
   pull_request:
     # Pull request events
     types: [synchronize, opened, reopened, ready_for_review]
- #pull request de que tipo? sincronizo abro reabro y listo para la review
+ #pull request of what type? I synchronize, open, reopen and ready for the review.
 jobs:
   build:
-    runs-on: ubuntu-latest  #se buildea en ubuntu 22
+    runs-on: ubuntu-latest  #it is built on ubuntu 22
 
     steps:
       - name: Checkout repository
@@ -17,7 +17,7 @@ jobs:
           submodules: recursive
 
       - name: Install dependencies
-        uses: awalsh128/cache-apt-pkgs-action@latest #esta action ya que hace una cache, la primera vez tarda mucho, las otras demora MUY poco ya que la cachea
+        uses: awalsh128/cache-apt-pkgs-action@latest #this action since it caches it, the first time it takes a long time, the others it takes VERY little time since it caches it
         with:
           packages: doxygen gcovr lcov cppcheck graphviz clang-format valgrind bc
           version: 1.0

@@ -27,12 +27,12 @@ void test_logic_divide(void)
     TEST_ASSERT_EQUAL(-1.0, divide(10,0));
 }
 
-//son las funciones que se van a llamar ANTES de ejecutar cada test
+//are the functions that will be called BEFORE executing each test
 void setUp(void)
 {
 
 }
-//son las funciones que se van a llamar DESPUES de ejecutar cada test
+//are the functions that will be called AFTER each test is executed
 void tearDown(void)
 {
 
@@ -40,8 +40,8 @@ void tearDown(void)
 
 int main(void)
 {
-    UNITY_BEGIN(); //iniciar framework de test
-    //puntero para cada funcion de los test
+    UNITY_BEGIN(); //start test framework
+     //pointer to each test function
     RUN_TEST(test_logic_add); 
     RUN_TEST(test_logic_divide);
     RUN_TEST(test_logic_multiply);

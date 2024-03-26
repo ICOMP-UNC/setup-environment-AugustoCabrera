@@ -1,12 +1,12 @@
 name: "Build"
 description: "Executes a compilation."
 
-#cada action se define aca, las actions son bash de script (consola)
+#each action is defined here, the actions are bash script (console)
 
 runs:
   using: "composite"
   steps:
-      - name: Compile  #con una shell de bash ejecuta los siguientes comandos:
+      - name: Compile  #with a bash shell run the following commands:
         shell: bash
         run: |
           SRC_FOLDER=$(pwd)/src

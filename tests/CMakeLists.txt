@@ -1,16 +1,16 @@
 cmake_minimum_required(VERSION 3.25 FATAL_ERROR)
 
-#CMAKE_CURRENT_SOURCE_DIR hace referencia al directorio donde se encuentra ESTE archivo
+#CMAKE_CURRENT_SOURCE_DIR refers to the directory where THIS file is located
 # ...TP0/setup-environment-AugustoCabrera/test/unit/CMakeLists.txt
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
 file(GLOB TESTS_FILES ${CMAKE_CURRENT_SOURCE_DIR}/unit/*.c) 
 file(GLOB SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/../src/logic.c) 
 
-#aca solo incluimos al target
+#here we only include the target
 target_link_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/external/Unity/src)
 
-#coverage (opcional)
+#coverage (optional)
 
 if(RUN_COVERAGE)
         message("Coverage enabled")
@@ -32,8 +32,8 @@ if(RUN_COVERAGE)
 endif()
 
 
-#test_${PROJECT_NAME} como debo testear
-#${SRC_fILES} para saber a que estoy testeando
+#test_${PROJECT_NAME} how should I test
+#${SRC_fILES} to know what I'm testing
 add_executable(test_${PROJECT_NAME} ${TESTS_FILES} ${SRC_FILES})
 
 target_link_libraries(test_${PROJECT_NAME} unity)
